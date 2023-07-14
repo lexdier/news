@@ -20,7 +20,7 @@ export default class TheSidebar extends Vue {
   protected get items() {
     return [
       {title: 'Create News', to: '/news/new', icon: 'plus'},
-      {title: 'Edit', to: '/news/edit', icon: 'user'},
+      {title: 'Edit', to: '/news/edit', icon: 'pen-to-square'},
 
     ]
   }
