@@ -51,7 +51,8 @@ export default {
         bootstrapCSS: false,
         bootstrapVueCSS: true
       }
-    ]
+    ],
+    ['@nuxtjs/axios', {}]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

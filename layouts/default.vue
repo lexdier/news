@@ -18,7 +18,7 @@ import TheHeader from "../components/TheHeader.vue";
 import TheSidebar from "../components/TheSidebar.vue";
 
 @Component({components: {TheHeader, TheSidebar}})
-export default class index extends Vue {
+export default class Default extends Vue {
 
 }
 </script>
