@@ -19,10 +19,9 @@ import {Component, Vue} from 'nuxt-property-decorator'
 export default class TheSidebar extends Vue {
   protected get items() {
     return [
-      {title: 'Basic Information', to: '/', icon: 'circle-info'},
-      {title: 'Username', to: '/username', icon: 'user'},
-      {title: 'Password', to: '/password', icon: 'lock'},
-      {title: 'Privacy and Safety', to: '/privacy', icon: 'fingerprint'},
+      {title: 'Create News', to: '/news/new', icon: 'plus'},
+      {title: 'Edit', to: '/news/edit', icon: 'user'},
+
     ]
   }
 }
