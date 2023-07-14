@@ -49,7 +49,7 @@ export default {
       'bootstrap-vue/nuxt',
       {
         bootstrapCSS: false,
-        bootstrapVueCSS: true
+        bootstrapVueCSS: false
       }
     ],
     ['@nuxtjs/axios', {}]
