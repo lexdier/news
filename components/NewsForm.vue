@@ -1,5 +1,5 @@
 <template>
-  <BForm>
+  <BForm v-if="news">
     <BCard header="Create your news">
       <BRow align-v="center" class="mb-4 g-4">
         <BCol lg="6">
