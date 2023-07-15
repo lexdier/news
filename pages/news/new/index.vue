@@ -7,12 +7,14 @@
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
 import NewsForm from "../../../components/NewsForm.vue";
+import {News} from "../../../interfaces/news";
 
 @Component({components: {NewsForm}})
 export default class NewNews extends Vue {
 
   public loading = false
-  protected news = {
+
+  protected news: News = {
     title: '',
     description: '',
     url: '',

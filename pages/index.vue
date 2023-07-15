@@ -68,7 +68,6 @@ export default class IndexPage extends Vue {
   mounted() {
     this.$axios.get('/news')
       .then(({data}) => {
-        console.log(data);
         data.reverse()
         this.newsList = data
       })

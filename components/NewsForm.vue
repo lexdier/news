@@ -54,10 +54,11 @@
 
 <script lang="ts">
 import {Component, VModel, Vue} from 'nuxt-property-decorator'
+import {News} from "../interfaces/news";
 
 @Component({})
 export default class NewsForm extends Vue {
-  @VModel()
-  public news: any
+  @VModel({type: Object})
+  public news: News | undefined
 }
 </script>
