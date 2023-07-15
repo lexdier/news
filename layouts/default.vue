@@ -1,14 +1,16 @@
 <template>
   <main>
     <TheHeader/>
-    <BRow>
-      <BCol md="4" xl="3">
-        <TheSidebar/>
-      </BCol>
-      <BCol>
-        <Nuxt/>
-      </BCol>
-    </BRow>
+    <BContainer>
+      <BRow class="g-4">
+        <BCol md="4" xl="3">
+          <TheSidebar/>
+        </BCol>
+        <BCol class="d-flex justify-content-center align-items-center">
+          <Nuxt/>
+        </BCol>
+      </BRow>
+    </BContainer>
   </main>
 </template>
 
