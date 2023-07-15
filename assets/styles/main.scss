@@ -1,0 +1,29 @@
+.b-form-tags {
+  &.focus {
+    background-color: var(--bs-card-bg);
+  }
+
+  .b-form-tag {
+    background-color: var(--bs-light);
+    color: var(--bs-dark);
+    font-size: 1em;
+    margin-left: .5em ;
+    margin-right: .5em ;
+
+    .b-form-tag-remove {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0.625rem;
+      box-sizing: content-box;
+      color: #0e2238;
+      height: 1em;
+      opacity: .75;
+      padding: 0.25em;
+      width: 1em;
+    }
+  }
+
+  .b-form-tags-input {
+    color: var(--bs-body-color);
+  }
+}
