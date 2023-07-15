@@ -76,9 +76,3 @@ export default class TheHeader extends Vue {
 
 }
 </script>
-
-<style scoped>
-.img {
-  mix-blend-mode: multiply;
-}
-</style>
