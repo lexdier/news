@@ -1,12 +1,10 @@
 <template>
-  <header class="bg-dark mb-4">
+  <header class="p-5">
     <BContainer>
       <BRow align-v="center">
         <BCol>
-          <BNavbarBrand class="me-1 me-sm-3">
-            <BImg fluid
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Newspaper_Cover.svg/2048px-Newspaper_Cover.svg.png"
-                  width="80"/>
+          <BNavbarBrand @click="$router.push('/')">
+            <span class="text-uppercase h1 user-select-none cursor-pointer">News</span>
           </BNavbarBrand>
         </BCol>
         <BCol col>
@@ -21,7 +19,15 @@
             </div>
           </BForm>
         </BCol>
-
+        <BCol cols="auto">
+          <div class="d-flex align-items-center">
+            <FontAwesome name="sun"/>
+            <div class="form-check form-switch ms-2 mb-0">
+              <input class="form-check-input" type="checkbox" role="switch" v-model="dark">
+            </div>
+            <FontAwesome name="moon"/>
+          </div>
+        </BCol>
         <BCol cols="auto">
           <BDropdown
             no-caret
@@ -48,9 +54,31 @@
 
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
+import {MetaInfo} from 'vue-meta'
+import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
 
-@Component({components: {}})
+@Component({components: {FontAwesome}})
 export default class TheHeader extends Vue {
+  protected dark = true
+  public visible = false
+
+  public head(): MetaInfo {
+    return {
+      htmlAttrs: {
+        'data-theme': this.dark ? 'dark' : 'light',
+      },
+
+      bodyAttrs: {
+        class: this.visible ? 'overflow-hidden' : '',
+      },
+    }
+  }
 
 }
 </script>
+
+<style scoped>
+.img {
+  mix-blend-mode: multiply;
+}
+</style>
