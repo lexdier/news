@@ -34,7 +34,15 @@ export default class EditNews extends Vue {
       })
   }
 
-  public update() {
+  public async update() {
+    const permission = await this.$bvModal.msgBoxConfirm('Are you sure you want to save it?',{
+      centered: true
+    })
+
+    if (!permission) {
+      return
+    }
+
     this.loading = true
 
     this.$axios.put(`/news/${this.id}`, this.news)
@@ -42,6 +50,10 @@ export default class EditNews extends Vue {
         this.loading = false
         this.$router.back()
       })
+      .finally(() => {
+        this.$toast.success('News updated successfully')
+      })
+
   }
 }
 </script>
