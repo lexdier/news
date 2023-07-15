@@ -23,9 +23,7 @@ import {Component, Vue} from 'nuxt-property-decorator'
 export default class TheSidebar extends Vue {
   protected get items() {
     return [
-      {title: 'Create News', to: '/news/new', icon: 'plus'},
-      {title: 'Edit', to: '/news/edit', icon: 'pen-to-square'},
-
+      {title: 'Create News', to: '/news/new', icon: 'plus'}
     ]
   }
 }
