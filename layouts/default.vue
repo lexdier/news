@@ -1,7 +1,7 @@
 <template>
   <main>
     <TheHeader/>
-    <BContainer>
+    <BContainer class="my-5">
       <BRow class="g-4">
         <BCol md="4" xl="3">
           <TheSidebar/>
