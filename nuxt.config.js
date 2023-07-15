@@ -52,6 +52,7 @@ export default {
         bootstrapVueCSS: false
       }
     ],
+    ['vue-toastification/nuxt', {}],
     ['@nuxtjs/axios', {}]
   ],
 
