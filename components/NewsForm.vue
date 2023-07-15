@@ -1,38 +1,50 @@
 <template>
   <BForm v-if="news">
-    <BCard header="Create your news">
-      <BRow align-v="center" class="mb-4 g-4">
-        <BCol lg="6">
-          <BFormGroup label="Title">
-            <BFormInput v-model="news.title" type="text"/>
-          </BFormGroup>
-        </BCol>
-        <BCol lg="6">
-          <BFormGroup label="Author">
-            <BFormInput v-model="news.author" type="text"/>
-          </BFormGroup>
-        </BCol>
-        <BCol lg="6">
-          <BFormGroup label="Link">
-            <BFormInput v-model="news.url" type="url"/>
-          </BFormGroup>
-        </BCol>
-        <BCol lg="6">
-          <BFormGroup label="Source">
-            <BFormInput v-model="news.source" type="text"/>
-          </BFormGroup>
-        </BCol>
-        <BCol lg="12">
-          <BFormGroup label="Description">
-            <BFormTextarea v-model="news.description" type="text"/>
-          </BFormGroup>
-        </BCol>
-        <BCol lg="6">
-          <BFormGroup label="Tags">
-            <BFormTags v-model="news.tags" type="text"/>
-          </BFormGroup>
-        </BCol>
-      </BRow>
+    <BCard no-body>
+      <BCardHeader>
+        <BRow align-h="end">
+          <BCol>
+            <span class="h2">Create your News</span>
+          </BCol>
+          <BCol cols="auto">
+            <slot name="slot"/>
+          </BCol>
+        </BRow>
+      </BCardHeader>
+      <BCardBody>
+        <BRow align-v="center" class="mb-4 g-4">
+          <BCol lg="6">
+            <BFormGroup label="Title">
+              <BFormInput v-model="news.title" required type="text"/>
+            </BFormGroup>
+          </BCol>
+          <BCol lg="6">
+            <BFormGroup label="Author">
+              <BFormInput v-model="news.author" required type="text"/>
+            </BFormGroup>
+          </BCol>
+          <BCol lg="6">
+            <BFormGroup label="Link">
+              <BFormInput v-model="news.url" required type="url"/>
+            </BFormGroup>
+          </BCol>
+          <BCol lg="6">
+            <BFormGroup label="Source">
+              <BFormInput v-model="news.source" required type="text"/>
+            </BFormGroup>
+          </BCol>
+          <BCol lg="12">
+            <BFormGroup label="Description">
+              <BFormTextarea v-model="news.description" required type="text"/>
+            </BFormGroup>
+          </BCol>
+          <BCol lg="6">
+            <BFormGroup label="Tags">
+              <BFormTags v-model="news.tags" type="text"/>
+            </BFormGroup>
+          </BCol>
+        </BRow>
+      </BCardBody>
 
       <template #footer>
         <BRow align-h="end">

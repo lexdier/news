@@ -1,6 +1,12 @@
 <template>
   <BOverlay :show="loading">
-    <NewsForm v-model="news" @handleNews="update"/>
+    <NewsForm v-model="news" @handleNews="update">
+      <template #slot>
+        <BBtn variant="danger" @click="remove">
+          <FontAwesome name="trash" mode="thin"/>
+        </BBtn>
+      </template>
+    </NewsForm>
   </BOverlay>
 </template>
 
@@ -8,8 +14,9 @@
 import {Component, Vue} from 'nuxt-property-decorator'
 import NewsForm from "../../../../components/NewsForm.vue";
 import {News} from "../../../../interfaces/news";
+import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
 
-@Component({components: {NewsForm}})
+@Component({components: {NewsForm, FontAwesome}})
 export default class EditNews extends Vue {
 
   public id = ""
@@ -35,7 +42,7 @@ export default class EditNews extends Vue {
   }
 
   public async update() {
-    const permission = await this.$bvModal.msgBoxConfirm('Are you sure you want to save it?',{
+    const permission = await this.$bvModal.msgBoxConfirm('Are you sure you want to save it?', {
       centered: true
     })
 
@@ -53,7 +60,21 @@ export default class EditNews extends Vue {
       .finally(() => {
         this.$toast.success('News updated successfully')
       })
+  }
 
+  public async remove() {
+    const confirm = await this.$bvModal.msgBoxConfirm('Are you sure you want to save it?', {
+      centered: true
+    })
+    if (!confirm) {
+      return
+    }
+
+    this.$axios.delete(`/news/${this.id}`)
+      .then(() => (this.$toast.success('The news was successfully removed')))
+      .finally(() => {
+        this.$router.push('/')
+      })
   }
 }
 </script>
