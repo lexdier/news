@@ -17,9 +17,19 @@
             <BFormInput v-model="news.url" type="url"/>
           </BFormGroup>
         </BCol>
+        <BCol lg="6">
+          <BFormGroup label="Source">
+            <BFormInput v-model="news.source" type="text"/>
+          </BFormGroup>
+        </BCol>
         <BCol lg="12">
           <BFormGroup label="Description">
             <BFormTextarea v-model="news.description" type="text"/>
+          </BFormGroup>
+        </BCol>
+        <BCol lg="6">
+          <BFormGroup label="Tags">
+            <BFormTags v-model="news.tags" type="text"/>
           </BFormGroup>
         </BCol>
       </BRow>
@@ -50,13 +60,16 @@ export default class NewNews extends Vue {
 
   protected news = {
     title: '',
-    url: '',
     description: '',
+    url: '',
     author: '',
+    source: '',
+    tags: [],
   }
 
   public createNews() {
-    console.log(this.news)
+    this.$axios.post('news', this.news)
+    this.$router.push('/')
   }
 
 }
