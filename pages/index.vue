@@ -14,8 +14,11 @@
                 </BCardTitle>
               </BCol>
               <BCol cols="auto">
-                <span class="fw-bolder">Source:</span>
-                <span class="text-uppercase" v-text="news.source"/>
+                <BBtn class="avatar rounded-circle d-flex justify-content-center align-items-center"
+                      variant="outline-primary"
+                      @click="$router.push(`/news/edit/${news._id}`)">
+                  <FontAwesome mode="thin" name="edit"/>
+                </BBtn>
               </BCol>
             </BRow>
           </BCardHeader>
@@ -28,6 +31,10 @@
                 <template v-for="(tag, index) in news.tags">
                   <span :key="index" class="me-2 text-primary">#{{ tag }}</span>
                 </template>
+              </BCol>
+              <BCol cols="auto">
+                <span class="fw-bolder">Source:</span>
+                <span class="text-uppercase" v-text="news.source"/>
               </BCol>
               <BCol cols="auto">
                 <span class="fw-bolder">By:</span>
@@ -51,8 +58,9 @@
 <script lang="ts">
 import Vue from 'vue'
 import {Component} from "nuxt-property-decorator";
+import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
 
-@Component({components: {}})
+@Component({components: {FontAwesome}})
 export default class IndexPage extends Vue {
 
   public newsList = []
