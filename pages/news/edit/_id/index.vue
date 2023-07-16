@@ -19,8 +19,6 @@ import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
 @Component({components: {NewsForm, FontAwesome}})
 export default class EditNews extends Vue {
 
-  public id = ""
-
   public loading = false
 
   protected news: News = {
@@ -32,13 +30,13 @@ export default class EditNews extends Vue {
     tags: [],
   }
 
-  mounted() {
-    this.id = this.$route.params.id
+  public get id() {
+    return this.$route.params.id
+  }
 
-    this.$axios.$get(`news/${this.id}`)
-      .then((news) => {
-        this.news = news
-      })
+  mounted() {
+    this.$axios.$get(`/news/${this.id}`)
+      .then((news) => (this.news = news))
   }
 
   public async update() {
@@ -54,11 +52,11 @@ export default class EditNews extends Vue {
 
     this.$axios.put(`/news/${this.id}`, this.news)
       .then(() => {
-        this.loading = false
+        this.$toast.success('News updated successfully')
         this.$router.back()
       })
       .finally(() => {
-        this.$toast.success('News updated successfully')
+        this.loading = false
       })
   }
 
