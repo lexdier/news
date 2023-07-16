@@ -54,7 +54,7 @@ export default {
       'bootstrap-vue/nuxt',
       {
         bootstrapCSS: false,
-        bootstrapVueCSS: false
+        bootstrapVueCSS: true
       }
     ],
     ['vue-toastification/nuxt', {}],
