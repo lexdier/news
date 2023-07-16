@@ -39,10 +39,10 @@
                 <BAvatar class="avatar-img avatar-lg rounded-circle" size="40px"/>
               </div>
             </template>
-            <BDropdownItem>
+            <BDropdownItem @click="$auth.loginWith('auth0')">
               <span>Log In</span>
             </BDropdownItem>
-            <BDropdownItem>
+            <BDropdownItem @click="$auth.logout()">
               <span>Log Out</span>
             </BDropdownItem>
           </BDropdown>

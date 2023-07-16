@@ -70,7 +70,7 @@ export default {
       callback: '/auth/callback',
       logout: '/auth/logout',
       home: '/'
-    },
+    }
   },
   axios: {
     baseURL: process.env.BASE_URL
