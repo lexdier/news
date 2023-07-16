@@ -35,9 +35,10 @@
             toggle-class="text-decoration-none"
             variant="link">
             <template #button-content>
-              <div class="avatar avatar-circle avatar-sm avatar-online">
-                <BAvatar class="avatar-img avatar-lg rounded-circle" size="40px"/>
+              <div v-if="$auth.user" class="avatar avatar-circle avatar-sm avatar-online">
+                <BImg :src="$auth.user.picture" class="rounded-circle" width="40"/>
               </div>
+              <BAvatar v-if="!$auth.user" class="avatar-img avatar-lg rounded-circle" size="40px"/>
             </template>
             <BDropdownItem @click="$auth.loginWith('auth0')">
               <span>Log In</span>
