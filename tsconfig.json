@@ -30,6 +30,7 @@
       "@nuxtjs/axios",
       "@types/auth0",
       "vue-toastification",
+      "bootstrap-vue/esm"
     ]
   },
   "exclude": [
