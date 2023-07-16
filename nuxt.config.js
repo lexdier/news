@@ -31,7 +31,9 @@ export default {
   css: ["@/assets/styles/main"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '@/plugins/auth0', mode: 'client' }
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -53,9 +55,17 @@ export default {
       }
     ],
     ['vue-toastification/nuxt', {}],
-    ['@nuxtjs/axios', {}]
+    ['@nuxtjs/axios', {}],
+    ['@nuxtjs/auth-next', {}]
   ],
-
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'domain.auth0.com',
+        clientId: '....'
+      }
+    }
+  },
   axios: {
     baseURL: process.env.BASE_URL
   },

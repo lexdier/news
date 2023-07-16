@@ -28,7 +28,8 @@
       "@types/node",
       "bootstrap/vue",
       "@nuxtjs/axios",
-      "vue-toastification"
+      "@types/auth0",
+      "vue-toastification",
     ]
   },
   "exclude": [
