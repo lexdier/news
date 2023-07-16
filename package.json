@@ -29,5 +29,8 @@
     "@nuxt/typescript-build": "^2.1.0",
     "@types/auth0": "^3.3.3",
     "sass": "^1.63.6"
+  },
+  "engines": {
+    "node": "^16"
   }
 }
