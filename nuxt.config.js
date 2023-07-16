@@ -32,7 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '@/plugins/auth0', mode: 'client' }
+    {src: '@/plugins/auth', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -61,10 +61,16 @@ export default {
   auth: {
     strategies: {
       auth0: {
-        domain: 'domain.auth0.com',
-        clientId: '....'
+        domain: process.env.AUTH0_DOMAIN,
+        clientId: process.env.AUTH0_CLIENT_ID
       }
-    }
+    },
+    redirect: {
+      login: '/auth/login',
+      callback: '/auth/callback',
+      logout: '/auth/logout',
+      home: '/'
+    },
   },
   axios: {
     baseURL: process.env.BASE_URL
