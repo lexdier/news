@@ -4,7 +4,7 @@
       <BCardHeader>
         <BRow align-h="end">
           <BCol>
-            <span class="h2">Create your News</span>
+            <span class="h2">Your News</span>
           </BCol>
           <BCol cols="auto">
             <slot name="slot"/>
