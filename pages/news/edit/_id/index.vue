@@ -3,7 +3,7 @@
     <NewsForm v-model="news" @handleNews="update">
       <template #slot>
         <BBtn variant="danger" @click="remove">
-          <FontAwesome name="trash" mode="thin"/>
+          <BIcon icon="trash"/>
         </BBtn>
       </template>
     </NewsForm>
@@ -14,9 +14,9 @@
 import {Component, Vue} from 'nuxt-property-decorator'
 import NewsForm from "../../../../components/NewsForm.vue";
 import {News} from "../../../../interfaces/news";
-import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
+import {BIcon} from "bootstrap-vue";
 
-@Component({components: {NewsForm, FontAwesome}})
+@Component({components: {NewsForm, BIcon}})
 export default class EditNews extends Vue {
 
   public loading = false

@@ -17,7 +17,7 @@
                 <BBtn class="avatar rounded-circle d-flex justify-content-center align-items-center"
                       variant="outline-primary"
                       @click="$router.push(`/news/edit/${news._id}`)">
-                  <FontAwesome mode="thin" name="edit"/>
+                  <BIcon icon="pen"/>
                 </BBtn>
               </BCol>
             </BRow>
@@ -58,9 +58,9 @@
 <script lang="ts">
 import Vue from 'vue'
 import {Component} from "nuxt-property-decorator";
-import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
+import {BIcon} from "bootstrap-vue";
 
-@Component({components: {FontAwesome}})
+@Component({components: {BIcon}})
 export default class IndexPage extends Vue {
 
   public newsList = []

@@ -75,6 +75,9 @@ export default {
       home: '/'
     }
   },
+  bootstrapVue: {
+    icons: true
+  },
   axios: {
     baseURL: process.env.BASE_URL
   },

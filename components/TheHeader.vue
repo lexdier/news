@@ -21,11 +21,11 @@
         </BCol>
         <BCol cols="auto">
           <div class="d-flex align-items-center">
-            <FontAwesome name="sun"/>
+            <BIcon icon="sun"/>
             <div class="form-check form-switch ms-2 mb-0">
               <input class="form-check-input" type="checkbox" role="switch" v-model="dark">
             </div>
-            <FontAwesome name="moon"/>
+            <BIcon icon="moon"/>
           </div>
         </BCol>
         <BCol cols="auto">
@@ -56,9 +56,9 @@
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
 import {MetaInfo} from 'vue-meta'
-import FontAwesome from "@merkaly/components/src/FontAwesome/FontAwesome.vue";
+import {BIcon} from 'bootstrap-vue'
 
-@Component({components: {FontAwesome}})
+@Component({components: {BIcon}})
 export default class TheHeader extends Vue {
   protected dark = true
   public visible = false
