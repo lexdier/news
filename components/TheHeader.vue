@@ -21,11 +21,11 @@
         </BCol>
         <BCol cols="auto">
           <div class="d-flex align-items-center">
-            <BIcon icon="sun"/>
-            <div class="form-check form-switch ms-2 mb-0">
+            <i class="fa fa-sun"/>
+            <div class="form-check form-switch ms-1 mb-0">
               <input class="form-check-input" type="checkbox" role="switch" v-model="dark">
             </div>
-            <BIcon icon="moon"/>
+            <i class="fa fa-moon"/>
           </div>
         </BCol>
         <BCol cols="auto">
@@ -56,9 +56,8 @@
 <script lang="ts">
 import {Component, Vue} from 'nuxt-property-decorator'
 import {MetaInfo} from 'vue-meta'
-import {BIcon} from 'bootstrap-vue'
 
-@Component({components: {BIcon}})
+@Component({components: {}})
 export default class TheHeader extends Vue {
   protected dark = true
   public visible = false

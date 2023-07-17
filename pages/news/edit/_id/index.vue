@@ -3,7 +3,7 @@
     <NewsForm v-model="news" @handleNews="update">
       <template #slot>
         <BBtn variant="danger" @click="remove">
-          <BIcon icon="trash"/>
+          <i class="fa fa-trash"/>
         </BBtn>
       </template>
     </NewsForm>
@@ -14,9 +14,8 @@
 import {Component, Vue} from 'nuxt-property-decorator'
 import NewsForm from "../../../../components/NewsForm.vue";
 import {News} from "../../../../interfaces/news";
-import {BIcon} from "bootstrap-vue";
 
-@Component({components: {NewsForm, BIcon}})
+@Component({components: {NewsForm}})
 export default class EditNews extends Vue {
 
   public loading = false
