@@ -17,7 +17,7 @@
                 <BBtn class="avatar rounded-circle d-flex justify-content-center align-items-center"
                       variant="outline-primary"
                       @click="$router.push(`/news/edit/${news._id}`)">
-                  <BIcon icon="pen"/>
+                  <i class="fa fa-pen"/>
                 </BBtn>
               </BCol>
             </BRow>
@@ -58,9 +58,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import {Component} from "nuxt-property-decorator";
-import {BIcon} from "bootstrap-vue";
 
-@Component({components: {BIcon}})
+@Component({components: {}})
 export default class IndexPage extends Vue {
 
   public newsList = []
