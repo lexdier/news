@@ -28,11 +28,15 @@ export default class NewNews extends Vue {
 
     this.$axios.post('news', this.news)
       .then(() => {
-        this.loading = true
         this.$router.push('/')
+        this.$toast.success('News created successfully')
+      })
+      .catch(({response: {data}}) => {
+        console.log(data.message);
+        this.$toast.error(data.message[0])
       })
       .finally(() => {
-        this.$toast.success('News created successfully')
+        this.loading = false
       })
   }
 
